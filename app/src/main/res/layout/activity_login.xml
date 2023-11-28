@@ -57,7 +57,7 @@
             android:layout_height="48dp"
             android:background="@drawable/rounded_edittext_background"
             android:fontFamily="@font/poppins_bold"
-            android:hint="cohort@bangkit.academy"
+            android:hint="cohortMD@bangkit.academy"
             android:paddingLeft="16dp"
             android:textSize="16dp" />
 
