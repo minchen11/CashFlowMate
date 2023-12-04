@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="subscriptions" type="id" />
+    <item name="shorts" type="id" />
+    <item name="library" type="id" />
+</resources>

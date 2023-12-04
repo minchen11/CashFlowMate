@@ -3,6 +3,7 @@ package com.capstone.cashflowmate.ui
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.capstone.cashflowmate.MainActivity
 import com.capstone.cashflowmate.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
@@ -14,12 +15,19 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        txtDaftarListener()
+        setupClickListeners()
     }
 
-    private fun txtDaftarListener() {
-        binding.txtDaftar.setOnClickListener {  // Use the binding object to access views
+
+    private fun setupClickListeners() {
+        binding.txtDaftar.setOnClickListener {
             startActivity(Intent(this, RegisterActivity::class.java))
+        }
+
+        binding.btnSignUp.setOnClickListener {
+            // Handle login logic if needed
+            // For now, just navigate to MainActivity
+            startActivity(Intent(this, MainActivity::class.java))
         }
     }
 }
