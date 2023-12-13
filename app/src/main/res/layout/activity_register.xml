@@ -63,11 +63,11 @@
             android:autofillHints="" />
 
         <TextView
-            android:id="@+id/txt_phone"
+            android:id="@+id/txt_address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_bold"
-            android:text="Phone Number"
+            android:text="Address"
             android:textColor="@color/white"
             android:layout_marginTop="10dp"
             android:textSize="15sp" />
@@ -78,7 +78,7 @@
             android:layout_height="48dp"
             android:background="@drawable/rounded_edittext_background"
             android:fontFamily="@font/poppins_bold"
-            android:hint="62*********"
+            android:hint="Jakarta"
             android:paddingLeft="16dp"
             android:textSize="16dp" />
 
