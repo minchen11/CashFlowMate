@@ -1,13 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+
+<androidx.core.widget.NestedScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.HomeFragment">
+    layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/text_margin"
-        android:text="@string/large_text" />
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.HomeFragment">
+
+        <ImageView
+            android:id="@+id/background_header_Home"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:background="@drawable/background_header_shape" />
+
+        <ImageView
+            android:id="@+id/vector_ek3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_hi_mate"
+            android:contentDescription="logo hi kuning"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"/>
+
+        <TextView
+            android:id="@+id/txt_hi_mate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="15dp"
+            android:text="Hi, Mate!"
+            android:textColor="@color/white"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="16sp"/>
+
+        <ImageView
+            android:id="@+id/profileHome"
+            android:src="@drawable/ic_profile"
+            android:contentDescription="_profile"
+            android:layout_marginStart="330dp"
+            android:layout_marginTop="33dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp" />
+
+    </FrameLayout>
 </androidx.core.widget.NestedScrollView>
