@@ -5,4 +5,5 @@
     <color name="purple">#32009A</color>
     <color name="lavender">#8A7DDC</color>
     <color name="yellow">#FBC608</color>
+    <color name="background_header_color">#ffffff</color>
 </resources>
