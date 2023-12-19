@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.ProfileFragment">
+
+        <ImageView
+            android:id="@+id/background_header"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:background="@drawable/background_header_shape"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <TextView
+            android:id="@+id/txt_profiledanbantuan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Profile &amp; Bantuan"
+            android:textColor="@color/white"
+            android:layout_marginTop="16dp"
+            android:textSize="16sp" />
+
+        <ImageView android:id="@+id/btn_back_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="button back clickabel"
+            android:src="@drawable/ic_backprofile"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp" />
+
+        <View
+            android:id="@+id/ellipse_4"
+            android:background="@drawable/ellipse_4_shape"
+            android:layout_marginTop="200dp"
+            android:layout_width="105dp"
+            android:layout_height="105dp"
+            android:layout_centerHorizontal="true"/>
+
+        <ImageView
+            android:id="@+id/rectangleprofile"
+            android:layout_width="360dp"
+            android:layout_height="680dp"
+            android:layout_centerHorizontal="true"
+            android:contentDescription="rectangleprofile"
+            android:src="@drawable/rectangleprofile" />
+
+        <ImageView
+            android:id="@+id/img_profile"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="205dp"
+            android:src="@drawable/ic_profile" />
+
+        <TextView
+            android:id="@+id/txt_nama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/img_profile"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Bangkit Academy"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/txt_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt_nama"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="cashflowmate@bangkit.com"/>
+
+        <ImageView
+            android:id="@+id/rectangleakunfinansialku"
+            android:src="@drawable/rectangleakunfinansialku"
+            android:contentDescription="rectangleakunfinansialku"
+            android:layout_marginTop="80dp"
+            android:layout_width="360dp"
+            android:layout_height="350dp"
+            android:layout_below="@id/txt_email"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/txt_akunfinansialmu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt_email"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="95dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Akun Finansialmu"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/txt_bank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt_akunfinansialmu"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="0dp"
+            android:fontFamily="@font/jost"
+            android:text="BANK"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/btn_logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rectangleakunfinansialku"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="-15dp"
+            android:text="Logout"
+            android:textSize="16dp"
+            android:fontFamily="@font/poppins_bold"
+            android:background="@drawable/button_shape"
+            android:width="350dp" />
+
+    </RelativeLayout>
+</androidx.core.widget.NestedScrollView>
