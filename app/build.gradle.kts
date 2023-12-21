@@ -19,13 +19,22 @@ android {
     }
 
     buildTypes {
+        debug{
+            buildConfigField ("String", "API_URL", "\"https://cash-flow-mate.et.r.appspot.com/\"")
+
+        }
         release {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            buildConfigField ("String", "API_URL", "\"https://cash-flow-mate.et.r.appspot.com/\"")
+
         }
+    }
+    buildFeatures {
+        buildConfig = true
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -51,7 +60,8 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
-
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     //Shimmer Effect Dependencies
     implementation ("com.facebook.shimmer:shimmer:0.1.0@aar")
 
@@ -59,8 +69,15 @@ dependencies {
     implementation ("com.google.firebase:firebase-auth-ktx")
 
     implementation ("com.google.firebase:firebase-auth:22.0.0") // Use the latest version
-
+    //koin
+    implementation ("io.insert-koin:koin-core:3.3.2")
+    implementation ("io.insert-koin:koin-android:3.3.2")
+    implementation ("com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.5")
 
     // Add the Firebase Authentication Kotlin extension
     implementation ("com.google.firebase:firebase-auth-ktx:22.0.0") // Use the latest version
+
+    implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.6.2")
+    implementation ("androidx.core:core:1.12.0")
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2")
 }
