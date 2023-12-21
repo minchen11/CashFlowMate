@@ -16,7 +16,7 @@
         <ImageView
             android:id="@+id/background_header"
             android:layout_width="match_parent"
-            android:layout_height="350dp"
+            android:layout_height="250dp"
             android:background="@drawable/background_header_shape"
             app:layout_constraintTop_toTopOf="parent"
             tools:layout_editor_absoluteX="0dp" />
@@ -43,7 +43,7 @@
         <View
             android:id="@+id/ellipse_4"
             android:background="@drawable/ellipse_4_shape"
-            android:layout_marginTop="200dp"
+            android:layout_marginTop="110dp"
             android:layout_width="105dp"
             android:layout_height="105dp"
             android:layout_centerHorizontal="true"/>
@@ -51,7 +51,7 @@
         <ImageView
             android:id="@+id/rectangleprofile"
             android:layout_width="360dp"
-            android:layout_height="680dp"
+            android:layout_height="490dp"
             android:layout_centerHorizontal="true"
             android:contentDescription="rectangleprofile"
             android:src="@drawable/rectangleprofile" />
@@ -61,7 +61,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="205dp"
+            android:layout_marginTop="115dp"
             android:src="@drawable/ic_profile" />
 
         <TextView
@@ -90,7 +90,7 @@
             android:id="@+id/rectangleakunfinansialku"
             android:src="@drawable/rectangleakunfinansialku"
             android:contentDescription="rectangleakunfinansialku"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="50dp"
             android:layout_width="360dp"
             android:layout_height="350dp"
             android:layout_below="@id/txt_email"

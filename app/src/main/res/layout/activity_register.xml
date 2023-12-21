@@ -73,7 +73,7 @@
             android:textSize="15sp" />
 
         <EditText
-            android:id="@+id/edt_phone"
+            android:id="@+id/edt_daerah"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:background="@drawable/rounded_edittext_background"
