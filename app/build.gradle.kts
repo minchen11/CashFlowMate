@@ -10,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId = "com.capstone.cashflowmate"
-        minSdk = 22
+        minSdk = 23
         targetSdk = 33
         versionCode = 1
         versionName = "1.0"
@@ -47,6 +47,8 @@ android {
     buildFeatures {
         viewBinding = true
     }
+
+
 }
 
 dependencies {
@@ -80,4 +82,17 @@ dependencies {
     implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.6.2")
     implementation ("androidx.core:core:1.12.0")
     implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2")
+
+    //Pie Chart dependency : https://github.com/PhilJay/MPAndroidChart
+    implementation ("com.github.PhilJay:MPAndroidChart:v3.1.0")
+
+    //collapse toolbar : https://github.com/material-components/material-components-android
+    implementation ("com.google.android.material:material:<1.6.0>")
+
+    //bottom navigation with floating action button : https://github.com/ismaeldivita/chip-navigation-bar
+    implementation ("com.github.ismaeldivita:chip-navigation-bar:1.4.0")
+
+
+
+
 }

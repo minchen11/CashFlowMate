@@ -18,5 +18,25 @@ object DummyTransactionManager {
         dummyTransactionList.clear()
     }
 
-    // Add more methods as needed
+    fun addTransaction(
+        type: Int,
+        title: String,
+        category: String,
+        amount: Double,
+        date: Long,
+        note: String
+    ) {
+        val id = (dummyTransactionList.size + 1).toString()
+        val iconCode = if (type == 1) 1 else 2
+        dummyTransactionList.add(DummyTransaction(id, iconCode, title, category, amount, date, note))
+    }
+
+    fun getTransaction(id: String): DummyTransaction? {
+        return dummyTransactionList.find { it.id == id }
+    }
+
+    fun child(transactionID: Any): Any {
+        return transactionID
+
+    }
 }

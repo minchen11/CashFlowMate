@@ -1,9 +1,8 @@
 package com.capstone.cashflowmate.ui
 
+import DummyTransactionManager
 import android.app.DatePickerDialog
-import android.os.Build
 import android.os.Build.*
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
@@ -13,11 +12,12 @@ import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.RadioButton
 import android.widget.RadioGroup
-import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.capstone.cashflowmate.CategoryOptions
 import com.capstone.cashflowmate.R
+import com.capstone.cashflowmate.dummy.DummyTransaction
 import com.google.android.material.snackbar.Snackbar
 import java.text.SimpleDateFormat
 import java.util.Calendar
@@ -40,12 +40,8 @@ class InsertionActivity : AppCompatActivity() {
     private var date: Long = 0
     private var invertedDate: Long = 0
 
-//    private lateinit var dbRef: DatabaseReference //initialize database
-//    private lateinit var auth: FirebaseAuth
+    private var dbRef = DummyTransactionManager //initialize database
 
-    //to prevent user input the data more than one,
-    //the problem usually occur when the network is offline (this app haven't support offline Db),
-    //where the user hit the save button multiple times
     private var isSubmitted: Boolean = false
 
     @RequiresApi(VERSION_CODES.M)
@@ -62,15 +58,7 @@ class InsertionActivity : AppCompatActivity() {
 //
         initItem()
 //
-//        // --Initialize Firebase Auth and firebase database--
-//        val user = Firebase.auth.currentUser
-//        val uid = user?.uid
-//        if (uid != null) {
-//            dbRef = FirebaseDatabase.getInstance()
-//                .getReference(uid) //initialize database with uid as the parent
-//        }
-//        auth = Firebase.auth
-//        //----
+//
 //
         //---category menu dropdown---
         etCategory = findViewById(R.id.category)
@@ -114,7 +102,7 @@ class InsertionActivity : AppCompatActivity() {
 //
         btnSaveData.setOnClickListener {
             if (!isSubmitted) {
-                //saveTransactionData()
+                saveTransactionData()
             } else {
                 Snackbar.make(
                     findViewById(android.R.id.content),
@@ -181,42 +169,33 @@ class InsertionActivity : AppCompatActivity() {
         )
         dpd.show()
     }
-}
-//    private fun saveTransactionData() {
-//        //getting values from form input user:
-//        val title = etTitle.text.toString()
-//        val category = etCategory.text.toString()
-//        val amountEt = etAmount.text.toString()
-//        val note = etNote.text.toString()
-//
-//        if(amountEt.isEmpty()){
-//            etAmount.error = "Please enter Amount"
-//        }else if(title.isEmpty()) {
-//            etTitle.error = "Please enter Title"
-//        }else if(category.isEmpty()){
-//            etCategory.error = "Please enter Category"
-//        }else{
-//            amount = etAmount.text.toString().toDouble() //convert to double type
-//
-//            val transactionID = dbRef.push().key!!
-//            invertedDate = date * -1 //convert millis value to negative, so it can be sort as descending order
-//            val transaction = TransactionModel(transactionID, type, title, category, amount, date, note, invertedDate) //object of data class
-//
-//            dbRef.child(transactionID).setValue(transaction)
-//                .addOnCompleteListener {
-//                    Toast.makeText(this, "Data Inserted Successfully", Toast.LENGTH_LONG).show()
-//                    finish()
-//                }.addOnFailureListener { err ->
-//                    Toast.makeText(this, "Error ${err.message}", Toast.LENGTH_LONG).show()
-//                }
-//
-//            isSubmitted = true
-//        }
-//    }
-//}
 
-/* Catat Uang App,
-   A simple money tracker app.
-   Created By Ferry Dwianta P
-   First Created on 18/05/2022
-*/
+    private fun saveTransactionData(){
+        //getting values from form input user:
+        val title = etTitle.text.toString()
+        val category = etCategory.text.toString()
+        val amountEt = etAmount.text.toString()
+        val note = etNote.text.toString()
+
+        if(amountEt.isEmpty()){
+            etAmount.error = "Please enter Amount"
+        }else if(title.isEmpty()) {
+            etTitle.error = "Please enter Title"
+        }else if(category.isEmpty()){
+            etCategory.error = "Please enter Category"
+        }else{
+            amount = etAmount.text.toString().toDouble() //convert to double type
+
+            dbRef.addTransaction(type, title, category, amount, date, note)
+            invertedDate = date * -1 //convert millis value to negative, so it can be sort as descending order
+
+
+            val transaction = DummyTransaction(transactionID = null, type, title, category, amount, date, note, invertedDate) //object of data class
+
+
+
+            isSubmitted = true
+        }
+
+    }
+}

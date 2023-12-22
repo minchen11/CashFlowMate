@@ -9,4 +9,7 @@ data class DummyTransaction (
     var date: Long? =null,
     var note: String? =null,
     var invertedDate: Long?=null
-)
+) {
+    val id: Any
+        get() = transactionID!!
+}
